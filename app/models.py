@@ -25,3 +25,18 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Work(models.Model):
+    title = models.CharField('Title', max_length=100)
+    image = models.ImageField(upload_to='images', verbose_name='Image')
+    thumbnail = models.ImageField(
+        upload_to='images', verbose_name='Thumnail', null=True, blank=True)
+    skill = models.CharField('Skill', max_length=100)
+    url = models.CharField('URL', max_length=100, null=True, blank=True)
+    created = models.DateField('Date')
+    description = models.TextField('Description')
+
+
+def __str__(self):
+    return self.title

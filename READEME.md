@@ -38,6 +38,8 @@
 2206 git merge startproject
 2207 git push origin main
 
+mysite/urls.py, app/urls.py, views.py を作成
+
 # データ登録
 
 settings.py, models.py, admin.py に行追加
@@ -55,3 +57,9 @@ settings.py, models.py, admin.py に行追加
 2227 git checkout main
 2228 git merge registerdata
 2229 git push origin main
+
+# トップページを整える
+
+app/templates/app/base.html, index.html を作成
+app/static/css/style.css を作成
+app/static/img/logo.svg を作成
