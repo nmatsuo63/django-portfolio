@@ -38,28 +38,47 @@
 2206 git merge startproject
 2207 git push origin main
 
+# アプリケーション作成
+
 mysite/urls.py, app/urls.py, views.py を作成
-
-# データ登録
-
 settings.py, models.py, admin.py に行追加
 2212 python3 manage.py startapp app
 2216 python3 manage.py makemigrations
 2217 python3 manage.py migrate
 2218 phthon3 manage.py createsuperuser
 2220 python3 manage.py runserver
-2221 git checkout registerdata
-2222 git checkout -b registerdata
-2223 git diff
-2224 git add .
-2225 git commit -m "registerdata"
-2226 git push origin registerdata
-2227 git checkout main
-2228 git merge registerdata
-2229 git push origin main
+
+# データ登録
+
+- サーバ起動して管理画面（/admin）に遷移し、profile を追加
 
 # トップページを整える
 
-app/templates/app/base.html, index.html を作成
-app/static/css/style.css を作成
-app/static/img/logo.svg を作成
+- テンプレートの作成（app/templates/app/base.html, index.html）
+- CSS の作成（app/static/css/style.css）
+- ロゴの登録（app/static/img/logo.svg）
+
+# 作品リストの作成
+
+models.py で Work クラスを作成
+admin.py で Work をインポート
+views.py で work データを表示
+index.html に work データを表示
+style.css で動きをつける
+2255 python3 manage.py makemigrations
+2256 python3 manage.py migrate
+2259 python3 manage.py runserver
+2260 git checkout -b worklist
+2261 git add .
+2262 git commit -m "worklist created"
+2263 git push origin worklist
+2264 git checkout main
+2265 git merge worklist
+2266 git push origin main
+
+# 作品詳細リストの作成
+
+app/urls.py で detail ページへの root を作成
+views.py で detail ページを作成
+index.html に detail ページへのリンクを貼る
+template/app/detail.html を作成
