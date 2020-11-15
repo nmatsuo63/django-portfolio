@@ -37,3 +37,21 @@
 2205 git checkout main
 2206 git merge startproject
 2207 git push origin main
+
+# データ登録
+
+settings.py, models.py, admin.py に行追加
+2212 python3 manage.py startapp app
+2216 python3 manage.py makemigrations
+2217 python3 manage.py migrate
+2218 phthon3 manage.py createsuperuser
+2220 python3 manage.py runserver
+2221 git checkout registerdata
+2222 git checkout -b registerdata
+2223 git diff
+2224 git add .
+2225 git commit -m "registerdata"
+2226 git push origin registerdata
+2227 git checkout main
+2228 git merge registerdata
+2229 git push origin main
